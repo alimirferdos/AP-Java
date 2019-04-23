@@ -7,6 +7,7 @@ pipeline {
   tools {
         // Note: this should match with the tool name configured in your jenkins instance (JENKINS_URL/configureTools/)
     maven "mvn"
+    docker "docker"
   }
   stages {
     stage('Code Clone') {
@@ -15,6 +16,9 @@ pipeline {
       }
     }
     stage('Build') {
+      agent {
+          docker { image 'maven:3-alpine' }
+      }
       steps {
         sh 'mvn -B -DskipTests clean package'
       }
