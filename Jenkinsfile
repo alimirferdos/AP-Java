@@ -6,7 +6,7 @@ pipeline {
   }
   tools {
         // Note: this should match with the tool name configured in your jenkins instance (JENKINS_URL/configureTools/)
-    mvn "Maven 3.6.0"
+    maven "mvn"
   }
   stages {
     stage('Code Clone') {
