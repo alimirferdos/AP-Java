@@ -1,9 +1,4 @@
 pipeline {
-  agent {
-    node {
-      label 'master'
-    }
-  }
   tools {
         // Note: this should match with the tool name configured in your jenkins instance (JENKINS_URL/configureTools/)
     maven "mvn"
